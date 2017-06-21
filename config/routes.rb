@@ -6,5 +6,7 @@ Rails.application.routes.draw do
     resources :comments
     resources :observations
   end
+
+  get '/proposals' => "proposals#index"
   root "welcome#index"
 end
