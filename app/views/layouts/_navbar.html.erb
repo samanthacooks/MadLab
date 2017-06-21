@@ -1,0 +1,26 @@
+<div class="collapse" id="exCollapsingNavbar">
+  <div class="collapse-bg p-a-1">
+    <div class='card'>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <%= link_to 'Home', root_path, class: "nav-link #{yield(:blog_active)}" %>
+          </li>
+          <% if user_signed_in? %>
+            <li class="list-group-item">
+              <%= link_to 'My Profile', profile_path(user), class: "nav-link #{yield(:user)}" %>
+            </li>
+            <li class="list-group-item">
+              <%= link_to 'Logout', destroy_user_session_path, class: "nav-link", method: :delete %>
+            </li>
+          <% else %>
+            <li class="list-group-item">
+              <%= link_to 'Login', new_user_session_path, class: "nav-link" %>
+            </li>
+            <li class="list-group-item">
+              <%= link_to 'Register', new_user_registration_path, class: "nav-link" %>
+            </li>
+          <% end %>
+        </ul>
+    </div>
+  </div>
+</div>
