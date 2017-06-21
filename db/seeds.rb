@@ -1,11 +1,44 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# create users
+15.times do 
+  User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Name.name)
+end
 
+# create proposals
+15.times do 
+ Proposal.create(summary: Faker::Lorem.sentence, hypothesis: Faker::Lorem.paragraph, status: ["open", "in progress", "close", "archived"].sample, proposer_id: rand(1..10) )
+end
 
+# create experiments
+15.times do 
+  Experiment.create(category: Faker::App.name, results: Faker::Lorem.sentence, conclusions: Faker::Lorem.sentences, proposal_id: rand(1..15), experimenter_id: rand(1..15))
+end
 
+# create procedures
+15.times do 
+	Procedure.create(steps: Faker::Lorem.sentence, experiment_id: rand(1..15))
+end
 
+# create observations on procedures
+15.times do 
+	Observation.create(observable_id: rand(1..15), observable_type: "Procedure")
+end
+
+# create observations on experiments
+15.times do 
+	Observation.create(observable_id: rand(1..15), observable_type: "Experiment")
+end
+
+# create comments on proposals
+15.times do 
+	Comment.create(commentable_id: rand(1..15), commentable_type: "Proposal")
+end
+
+# create comments on experiments
+15.times do 
+	Comment.create(commentable_id: rand(1..15), commentable_type: "Experiment")
+end
+
+# create comments on observations
+15.times do 
+	Comment.create(commentable_id: rand(1..15), commentable_type: "Observation")
+end
