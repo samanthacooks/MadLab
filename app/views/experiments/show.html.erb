@@ -1,2 +1,30 @@
-<h1>Experiments#show</h1>
-<p>Find me in app/views/experiments/show.html.erb</p>
+<h1>The Deets on this Experiment!</h1>
+
+<div class="experiment-details">
+  <b>Category</b> @experiment.category<br>
+  <b>RESULTS</b> = > @experiment.results <br>
+  <b>CONCLUSION</b> => @experiment.conclusions <br>
+  <b>OBSERVATION</b> = > @experiment.observations <br>
+</div>
+
+
+<br><br><br><br>
+
+
+<h1>Procedures</h1>
+
+
+<div class="experiment-procedure">
+  @experiment.procedures
+  <div class="procedure-observations"><h4>these are the procedure observations</h4>
+  @experiment.procedures.observations
+  </div>
+  <%= link_to "Add Observation",new_proposal_observation_path%>
+</div>
+
+<br><br><br><br>
+
+<h1>Experiment comments</h1>
+<div class="experiment-comments">
+  @experiment.comments
+</div>
