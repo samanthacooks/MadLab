@@ -1,11 +1,11 @@
 # create users
 15.times do 
-  User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Name.name)
+  User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, encrypted_password: Faker::Name.name)
 end
 
 # create proposals
 15.times do 
- Proposal.create(summary: Faker::Lorem.sentence, hypothesis: Faker::Lorem.paragraph, status: ["open", "in progress", "close", "archived"].sample, proposer_id: rand(1..10) )
+ Proposal.create(summary: Faker::Lorem.sentence, hypothesis: Faker::Lorem.paragraph, status: ["open", "in progress", "close", "archived"].sample, proposer_id: rand(1..15) )
 end
 
 # create experiments
