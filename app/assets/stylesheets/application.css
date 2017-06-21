@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+.experiment-details{
+  border:1px solid red;
+  width:50%;
+}
+.experiment-procedure{
+border:1px solid red;
+  width:50%;
+}
+.procedure-observations{
+border:1px solid red;
+  width:50%;
+}
+.experiment-comments{
+border:1px solid red;
+  width:50%;
+}
