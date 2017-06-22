@@ -1,5 +1,6 @@
 class ExperimentsController < ApplicationController
   def index
+
   end
 
   def new
@@ -9,9 +10,9 @@ class ExperimentsController < ApplicationController
   end
 
   def show
+    @experiment = Experiment.find_by(id: params[:id])
     render 'show'
-    # @experiment = Experiment.find_by(experiment_params)
-
+    # binding.pry
   end
 
   def edit
@@ -26,6 +27,6 @@ class ExperimentsController < ApplicationController
   private
 
   def experiment_params
-    params.require(:experiment).permit(:category, :results, :conclusions,:proposal_id,:experimenter_id)
+    params.require(:experiment).permit(:category, :results, :conclusions)
   end
 end
