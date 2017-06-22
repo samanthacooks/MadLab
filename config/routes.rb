@@ -7,9 +7,10 @@ Rails.application.routes.draw do
 
   resources :experiments do
     resources :procedures
-    resources :comments
+    resources :comments,except:[:create]
     resources :observations
   end
+    post '/experiments/:experiment_id/comments' => 'comments#create', as: 'experiments_comment_post'
 
   get '/about' => "welcome#about"
   get '/help' => "welcome#help"

@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20170621195702) do
     t.text "body", null: false
     t.string "commentable_type"
     t.bigint "commentable_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
@@ -35,7 +36,7 @@ ActiveRecord::Schema.define(version: 20170621195702) do
   end
 
   create_table "observations", force: :cascade do |t|
-    t.string "body"
+    t.string "body", null: false
     t.string "observable_type"
     t.bigint "observable_id"
     t.datetime "created_at", null: false

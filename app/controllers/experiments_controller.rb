@@ -12,11 +12,10 @@ class ExperimentsController < ApplicationController
 
   def show
     @experiment = Experiment.find_by(id: params[:id])
-    render 'show'
-    # binding.pry
   end
 
   def edit
+
   end
 
   def update
