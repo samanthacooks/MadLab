@@ -51,20 +51,23 @@
 
 <h1>Experiment comments</h1>
 <div class="border">
-  <% experiments = @experiment.experimenter.experiments %>
-  <% experiment = experiments.find(params[:id]) %>
-  <% if experiment.experimenter.comments.empty?%>
-    <p> There are no comments for this experiment </p>
-  <% else %>
-    <%= experiment.experimenter.comments.first.body %>
+  <% @experiment.comments.each_with_index do |comment,index| %>
+    <% if @experiment.comments.empty?%>
+      <p> There are no comments for this experiment </p>
+    <% else %>
+      <p> <%="#{index+1}. "%> <%= comment.body %> </p>
+    <% end %>
+
+    <% if signed_in? %>
+      <% if current_user.id == comment.user_id %>
+        <%= link_to "Edit", edit_experiment_comment_path(experiment_id: @experiment.id, id: comment.id)%>
+        <%= link_to "Delete",experiments_comment_post_destroy_path(@experiment,comment),:method=> :delete %>
+      <% end %>
+    <% end %>
   <% end %>
 
   <% if signed_in? %>
     <%= link_to "Add comment",new_experiment_comment_path(@experiment)%>
-    <% if current_user.id == @experiment.experimenter.id %>
-        <%= link_to "Edit", edit_experiment_comment_path(@experiment)%>
-        <%= link_to "Delete" %>
-      <% end %>
   <% end %>
 </div>
 

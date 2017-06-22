@@ -17,7 +17,6 @@ class CommentsController < ApplicationController
   end
 
   def create
-    binding.pry
     @comment = User.find_by(id:current_user.id).comments.new(
       body: params["comment"]["body"],
       user_id: current_user.id,
@@ -32,21 +31,16 @@ class CommentsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @comment.update(comment_params)
-        redirect_to root_path
-      else
-        render 'new'
-      end
+    if @comment.update(comment_params)
+      redirect_to root_path
+    else
+      render 'new'
     end
   end
 
   def destroy
     @comment.destroy
-    respond_to do |format|
-      format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to root_path
   end
 
   private

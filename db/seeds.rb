@@ -1,3 +1,10 @@
+User.create(
+  first_name: "Hector",
+  last_name: "Feurtado",
+  email: "HectorFeurtado@gmail.com",
+  password: 123456
+  )
+
 users = []
 15.times do
   users << User.create(
