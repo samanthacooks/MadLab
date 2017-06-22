@@ -1,7 +1,6 @@
-# create users
 proposers = []
 15.times do
-  proposers << User.create(
+  proposers<<User.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
@@ -41,51 +40,62 @@ experiments = []
   )
 end
 
-comments = []
+
+# create observations on procedures
+experiments_observations = []
 15.times do
-	comments << Comment.create(
-    commentable:experimenters.sample,
+  experiments_observations << experiments.sample.observations.create(
+    body:Faker::Lorem.paragraph
+    )
+end
+
+# create comments on experiments
+experiments_comments = []
+15.times do
+  experiments_comments<< experiments.sample.comments.create(
+    body:Faker::Lorem.paragraph
     )
 end
 
 # create procedures
+experiments_procedures = []
 15.times do
-  Procedure.create(
+  experiments_procedures << experiments.sample.procedures.create(
     steps: Faker::Lorem.sentence,
-    experiment_id: rand(1..15),
-    # observable:
     )
 end
 
-# create observations on procedures
+
+proposal_comments = []
 15.times do
-  Observation.create(
-    observable_id: rand(1..15),
-    observable_type: "Procedure",
+  proposal_comments << proposals.sample.comments.create(
+    body:Faker::Lorem.paragraph
     )
 end
 
-# create observations on experiments
+proposal_experiment = []
 15.times do
-  Observation.create(
-    observable_id: rand(1..15),
-    observable_type: "Experiment"
+  proposal_experiment << proposals.sample.experiments.create(
+    category: Faker::App.name,
+    results: Faker::Lorem.sentence,
+    conclusions: Faker::Lorem.sentences,
+    proposal_id: proposals.sample.id,
+    experimenter_id:experimenters.sample.id
     )
 end
 
-
-# create comments on experiments
+procedures_observations = []
 15.times do
-	Comment.create(
-    commentable_id: rand(1..15),
-    commentable_type: "Experiment"
+ procedures_observations<< experiments_procedures.sample.observations.create(
+    body:Faker::Lorem.paragraph
     )
 end
+
 
 # create comments on observations
+observations_comments = []
 15.times do
-	Comment.create(
-    commentable_id: rand(1..15),
-    commentable_type: "Observation"
+  observations_comments<< experiments_observations.sample.comments.create(
+    body:Faker::Lorem.paragraph
     )
 end

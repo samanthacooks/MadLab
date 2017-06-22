@@ -1,2 +1,12 @@
-<h1>Proposals#show</h1>
-<p>Find me in app/views/proposals/show.html.erb</p>
+<p>
+  <strong>summary:</strong>
+  <%= @proposal.summary %>
+</p>
+ 
+<p>
+  <strong>Hypothesis:</strong>
+  <%= @proposal.hypothesis %>
+</p>
+
+<%= link_to 'Edit', edit_proposal_path(@proposal) %> |
+<%= link_to 'Back', proposals_path %>
