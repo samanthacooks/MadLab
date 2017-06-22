@@ -28,7 +28,7 @@
     <% end %>
   <% end %>
   </div>
-  <%= link_to "Add Observation"%>
+  <%= link_to "Add Observation",new_experiment_procedure_path(@experiment)%>
 </div>
 
 <br><br><br><br>
@@ -37,6 +37,10 @@
 <div class="border">
   <% experiments = @experiment.experimenter.experiments %>
   <% experiment = experiments.find(params[:id]) %>
-  <%= experiment.experimenter.comments.first.body %>
+  <% if experiment.experimenter.comments.empty?%>
+    <p> There are no comments for this </p>
+  <% else %>
+    <%= experiment.experimenter.comments.first.body %>
+  <% end %>
 </div>
-  <%= link_to "Add comment"%>
+  <%= link_to "Add comment",new_experiment_comment_path(@experiment)%>
