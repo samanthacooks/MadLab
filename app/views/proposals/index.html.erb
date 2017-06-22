@@ -1,20 +1,22 @@
-<h1>Listing proposals</h1>
- 
+<h1>Current Proposals</h1>
+
 <table>
   <tr>
-    <th>Summary</th>
-    <th>Hypothesis</th>
+    <th class="protitle">Summary</th>
+    <th class="protitle">Hypothesis</th>
   </tr>
- 
+
   <% @proposals.each do |proposal| %>
     <tr>
-      <td><%= proposal.summary %></td>
-      <td><%= proposal.hypothesis %></td>
-      <td><%= link_to 'Show', proposal_path(proposal) %></td>
-      <td><%= link_to 'Edit', edit_proposal_path(proposal) %></td>
-      <td><%= link_to 'Delete', proposal_path(proposal),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+      <td id="summary"><%= proposal.summary %></td>
+      <td id="hypothesis"><%= proposal.hypothesis %></td>
+      <td class="prolink"><%= link_to 'Show', proposal_path(proposal) %></td>
+      <% if user_signed_in? %>
+        <td id="proedit"><%= link_to 'Edit', edit_proposal_path(proposal) %></td>
+        <td id="prodelete"><%= link_to 'Delete', proposal_path(proposal),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>
