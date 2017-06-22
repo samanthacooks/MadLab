@@ -1,4 +1,4 @@
-users << User.create(
+ User.create(
     first_name: "Hector",
     last_name: "Feurtado",
     email: "HectorFeurtado@gmail.com",
