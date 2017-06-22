@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
       )
 
     if @comment.save
-      redirect_to root_path
+      redirect_to experiment_path
     else
       render 'new'
     end
