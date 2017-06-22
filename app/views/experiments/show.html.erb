@@ -6,28 +6,27 @@
   <b>CONCLUSION</b> => <%= @experiment.conclusions %> <br>
 
   <div class="border">
-  <h4>Experiment observations</h4>
-    <b>OBSERVATIONS</b> = > <%= @experiment.observations %><br>
-    <%= link_to "Add Observation", new_experiment_observation_path(@experiment)%>
-
+    <h4>Experiment observations</h4>
+      <% @experiment.observations.each_with_index do |observation,index|%>
+        <p><%="#{index+1}. "%><%= observation.body %></p><br>
+      <% end %>
+      <%= link_to "Add Observation", new_experiment_observation_path(@experiment)%>
   </div>
-
 </div>
-
 
 <br><br><br><br>
 
-
 <h1>Procedures</h1>
-
-
 <div class="border">
   <% @experiment.procedures.each do |procedure|%>
     <p><%= procedure.steps %></p>
   <% end %>
   <div class="border"><h4>Procedure observations</h4>
-  <%= @experiment.procedures %>
-  <% binding.pry %>
+  <% @experiment.procedures.each_with_index do |procedure,index|%>
+    <% procedure.observations.each do |observation| %></p><br>
+      <p><%="#{index+1}. "%><%= observation.body %></p><br>
+    <% end %>
+  <% end %>
   </div>
   <%= link_to "Add Observation"%>
 </div>
@@ -36,6 +35,8 @@
 
 <h1>Experiment comments</h1>
 <div class="border">
-  <%= @experiment.comments %>
+  <% experiments = @experiment.experimenter.experiments %>
+  <% experiment = experiments.find(params[:id]) %>
+  <%= experiment.experimenter.comments.first.body %>
 </div>
   <%= link_to "Add comment"%>
