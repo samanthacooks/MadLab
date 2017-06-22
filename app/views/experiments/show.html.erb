@@ -60,8 +60,8 @@
 
     <% if signed_in? %>
       <% if current_user.id == comment.user_id %>
-        <%= link_to "Edit", edit_experiment_comment_path(@experiment)%>
-        <%= link_to "Delete" %>
+        <%= link_to "Edit", edit_experiment_comment_path(experiment_id: @experiment.id, id: comment.id)%>
+        <%= link_to "Delete",experiments_comment_post_destroy_path(@experiment,comment),:method=> :delete %>
       <% end %>
     <% end %>
   <% end %>
