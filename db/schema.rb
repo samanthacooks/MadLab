@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20170621195702) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
+    t.text "body", null: false
     t.string "commentable_type"
     t.bigint "commentable_id"
     t.datetime "created_at", null: false
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 20170621195702) do
   end
 
   create_table "observations", force: :cascade do |t|
+    t.string "body"
     t.string "observable_type"
     t.bigint "observable_id"
     t.datetime "created_at", null: false
