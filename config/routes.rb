@@ -11,5 +11,9 @@ Rails.application.routes.draw do
     resources :observations
   end
 
+  get '/about' => "welcome#about"
+  get '/help' => "welcome#help"
+
+
   root "welcome#index"
 end
