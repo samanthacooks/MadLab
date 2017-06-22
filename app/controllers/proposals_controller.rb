@@ -20,7 +20,7 @@ class ProposalsController < ApplicationController
 
 
   def show
-    binding.pry
+    # binding.pry
     @proposal = Proposal.find(params[:id])
   end
 
