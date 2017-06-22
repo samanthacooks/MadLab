@@ -16,10 +16,12 @@ ActiveRecord::Schema.define(version: 20170621195702) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.integer "commentable_id"
+    t.text "body", null: false
     t.string "commentable_type"
+    t.bigint "commentable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
   end
 
   create_table "experiments", force: :cascade do |t|
@@ -28,34 +30,24 @@ ActiveRecord::Schema.define(version: 20170621195702) do
     t.text "conclusions", null: false
     t.integer "proposal_id"
     t.integer "experimenter_id"
-    t.string "commentable_type"
-    t.bigint "commentable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "observations", force: :cascade do |t|
+    t.string "body"
     t.string "observable_type"
     t.bigint "observable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["commentable_type", "commentable_id"], name: "index_experiments_on_commentable_type_and_commentable_id"
-    t.index ["observable_type", "observable_id"], name: "index_experiments_on_observable_type_and_observable_id"
-  end
-
-  create_table "observations", force: :cascade do |t|
-    t.integer "observable_id"
-    t.string "observable_type"
-    t.string "commentable_type"
-    t.bigint "commentable_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["commentable_type", "commentable_id"], name: "index_observations_on_commentable_type_and_commentable_id"
+    t.index ["observable_type", "observable_id"], name: "index_observations_on_observable_type_and_observable_id"
   end
 
   create_table "procedures", force: :cascade do |t|
     t.string "steps", null: false
     t.integer "experiment_id"
-    t.string "observable_type"
-    t.bigint "observable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["observable_type", "observable_id"], name: "index_procedures_on_observable_type_and_observable_id"
   end
 
   create_table "proposals", force: :cascade do |t|
@@ -63,11 +55,8 @@ ActiveRecord::Schema.define(version: 20170621195702) do
     t.string "hypothesis", null: false
     t.string "status", null: false
     t.integer "proposer_id"
-    t.string "commentable_type"
-    t.bigint "commentable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["commentable_type", "commentable_id"], name: "index_proposals_on_commentable_type_and_commentable_id"
   end
 
   create_table "users", force: :cascade do |t|
