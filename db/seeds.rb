@@ -20,6 +20,7 @@ experimenters = [
   )
 end
 ]
+
 # create proposals
 proposals = [
 15.times do
@@ -38,7 +39,7 @@ experiments = [
     category: Faker::App.name,
     results: Faker::Lorem.sentence,
     conclusions: Faker::Lorem.sentences,
-    proposal_id: proposals.sample.id,
+    proposal_id: proposals.sample.id
   )
 end
 ]
@@ -65,7 +66,7 @@ end
 experiments_procedures = [
 15.times do
   experiments.sample.procedures.create(
-    steps: Faker::Lorem.sentence,
+    steps: Faker::Lorem.sentence
   )
 end
 ]
@@ -96,6 +97,7 @@ procedures_observations = [
 15.times do
   experiments_procedures.sample.observations.create(
     body:Faker::Lorem.paragraph
+  )
 end
 ]
 
