@@ -1,2 +1,20 @@
-<h1>Proposals#index</h1>
-<p>THESE ARE ALL OF THE PROPOSALS</p>
+<h1>Listing proposals</h1>
+ 
+<table>
+  <tr>
+    <th>Summary</th>
+    <th>Hypothesis</th>
+  </tr>
+ 
+  <% @proposals.each do |proposal| %>
+    <tr>
+      <td><%= proposal.summary %></td>
+      <td><%= proposal.hypothesis %></td>
+      <td><%= link_to 'Show', proposal_path(proposal) %></td>
+      <td><%= link_to 'Edit', edit_proposal_path(proposal) %></td>
+      <td><%= link_to 'Delete', proposal_path(proposal),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
