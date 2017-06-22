@@ -5,9 +5,9 @@
 
 a {
     text-decoration: none;
-    font-family: monopsace;
+    font-family: sans-serif;
     color: dimgrey;
-    font-size: 115%
+    font-size: 120%
 }
 
 .navbar {
@@ -15,9 +15,10 @@ a {
     display: inline;
 }
 
-#logo {
-  height: 100px;
-  display: inline-block;
+.logo {
+  margin-left: 10px;
+  height: 75px;
+  display: inline;
   float: left;
 }
 
