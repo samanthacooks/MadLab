@@ -8,9 +8,15 @@
   <div class="border">
     <h4>Experiment observations</h4>
       <% @experiment.observations.each_with_index do |observation,index|%>
-        <p><%="#{index+1}. "%><%= observation.body %></p><br>
+          <p><%="#{index+1}. "%><%= observation.body %></p><br>
+        <% if current_user.id == observation.observable_id %>
+          <%= link_to "Edit"%>
+          <%= link_to "Delete" %>
+        <% end %>
       <% end %>
-      <%= link_to "Add Observation", new_experiment_observation_path(@experiment)%>
+      <% if signed_in? %>
+        <%= link_to "Add Observation", new_experiment_observation_path(@experiment)%>
+      <% end %>
   </div>
 </div>
 
@@ -25,10 +31,16 @@
   <% @experiment.procedures.each_with_index do |procedure,index|%>
     <% procedure.observations.each do |observation| %></p><br>
       <p><%="#{index+1}. "%><%= observation.body %></p><br>
+      <% if current_user.id == observation.observable_id %>
+        <%= link_to "Edit"%>
+        <%= link_to "Delete" %>
+      <% end %>
     <% end %>
   <% end %>
   </div>
-  <%= link_to "Add Observation",new_experiment_procedure_path(@experiment)%>
+  <% if signed_in? %>
+    <%= link_to "Add Observation",new_experiment_procedure_path(@experiment)%>
+  <% end %>
 </div>
 
 <br><br><br><br>
@@ -42,5 +54,13 @@
   <% else %>
     <%= experiment.experimenter.comments.first.body %>
   <% end %>
+
+  <% if signed_in? %>
+    <%= link_to "Add comment",new_experiment_comment_path(@experiment)%>
+    <% if current_user.id == @experiment.experimenter.id %>
+        <%= link_to "Edit"%>
+        <%= link_to "Delete" %>
+      <% end %>
+  <% end %>
 </div>
-  <%= link_to "Add comment",new_experiment_comment_path(@experiment)%>
+
