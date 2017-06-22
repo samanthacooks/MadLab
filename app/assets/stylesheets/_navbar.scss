@@ -1,39 +1,48 @@
+.collapse-bg {
+    background-color: darkseagreen;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    font-family: sans-serif;
+    color: dimgrey;
+    font-size: 120%
+}
 
 .navbar {
-    border-radius: 0;
-    margin-bottom: 20px;
-    .navbar-brand {
-        font-weight: bolder;
-        .light {
-            font-weight: 300;
-        }
-    }
-    .navbar-toggle {
-        outline: none;
-    }
+    position: fixed;
+    display: inline;
 }
 
-.collapse-bg {
-    padding: 0 !important;
-    .card {
-        margin-bottom: 0;
-        border-radius: 0;
-        border: none;
-    }
+.logo {
+  margin-left: 10px;
+  height: 75px;
+  display: inline;
+  float: left;
 }
 
-.collapse-bg .card .list-group-item {
-    padding: 0;
-    border-radius: 0 !important;
-    border-color: black;
-    a {
-        background-color: #1a1a1a;
-        color: #bdc3c7;
-        width: 100%;
-        padding: 10px;
-        &:active {
-            color: white;
-            border-bottom: none;
-        }
-    }
+.topnav li {
+    float: right;
+    display: inline;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 17px;
+    text-decoration: none;
+    border: 1px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    position: relative;
+
+}
+
+.topnav li:hover {
+    background-color: silver;
+    color: black;
+}
+
+.topnav li.active {
+    background-color: #4CAF50;
+    color: white;
 }

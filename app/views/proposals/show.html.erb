@@ -1,12 +1,17 @@
-<p>
-  <strong>summary:</strong>
-  <%= @proposal.summary %>
-</p>
- 
-<p>
-  <strong>Hypothesis:</strong>
-  <%= @proposal.hypothesis %>
-</p>
+<div class="showproposal">
+  <p>
+    <strong>Summary:</strong>
+    <%= @proposal.summary %>
+  </p>
+  <br>
+  <p>
+    <strong>Hypothesis:</strong>
+    <%= @proposal.hypothesis %>
+  </p>
+  <br>
+  <% if user_signed_in? %>
+    <%= link_to 'Edit', edit_proposal_path(@proposal), style: 'color:darkolivegreen' %> |
+  <% end %>
+  <%= link_to 'Back', proposals_path, style: 'color:darkolivegreen' %>
 
-<%= link_to 'Edit', edit_proposal_path(@proposal) %> |
-<%= link_to 'Back', proposals_path %>
+</div>

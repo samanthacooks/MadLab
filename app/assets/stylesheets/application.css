@@ -16,6 +16,7 @@
 
 
 @import "bootstrap";
+@import "bootstrap/theme";
 @import "navbar";
 @import "comments";
 @import "experiments";
@@ -23,4 +24,3 @@
 @import "procedures";
 @import "proposals";
 @import "welcome";
-

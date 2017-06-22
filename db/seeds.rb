@@ -1,4 +1,20 @@
-# create users
+User.create(
+  first_name: "Hector",
+  last_name: "Feurtado",
+  email: "HectorFeurtado@gmail.com",
+  password: 123456
+  )
+
+users = []
+15.times do
+  users << User.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    password: Faker::Name.name
+    )
+end
+
 proposers = []
 15.times do
   proposers<<User.create(
@@ -54,7 +70,8 @@ end
 experiments_comments = []
 15.times do
   experiments_comments<< experiments.sample.comments.create(
-    body:Faker::Lorem.paragraph
+    body:Faker::Lorem.paragraph,
+    user_id:users.sample.id
     )
 end
 
@@ -70,7 +87,8 @@ end
 proposal_comments = []
 15.times do
   proposal_comments << proposals.sample.comments.create(
-    body:Faker::Lorem.paragraph
+    body:Faker::Lorem.paragraph,
+    user_id: users.sample.id
     )
 end
 
@@ -96,7 +114,8 @@ end
 # create comments on observations
 observations_comments = []
 15.times do
-	observations_comments<< experiments_observations.sample.comments.create(
-    body:Faker::Lorem.paragraph
+  observations_comments<< experiments_observations.sample.comments.create(
+    body:Faker::Lorem.paragraph,
+    user_id: users.sample.id
     )
 end

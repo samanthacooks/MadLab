@@ -4,6 +4,7 @@ class ExperimentsController < ApplicationController
   end
 
   def new
+    @experiment = Experiment.new
   end
 
   def create
@@ -11,11 +12,10 @@ class ExperimentsController < ApplicationController
 
   def show
     @experiment = Experiment.find_by(id: params[:id])
-    render 'show'
-    # binding.pry
   end
 
   def edit
+
   end
 
   def update

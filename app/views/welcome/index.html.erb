@@ -1,4 +1,34 @@
-<h1>MadLab</h1>
+<main>
+<h1>Experiment Tracking, Made Easy</h1>
+
+<div class="button">
+  <form>
+    <%= link_to 'Sign Up Today!', new_user_registration_path, style: 'color:darkolivegreen' %>
+  </form>
+</div>
+<div class="sell-blocks">
+  <div class="explain-left">
+    <h3>Convienance</h3>
+    <p class="sell">Forget those days of carrying troublesome lab reports. Now you can access important lab data anywhere with our interactive app. You can store virtually any information you need to accurately record the lab project from start to finish.</p>
+  </div>
+
+  <div class="explain-left">
+    <h3>Organization</h3>
+    <p class="sell">The clean interface of MadLab is especially user-friendly and streamlined. The app was designed by engineers so you can be sure, they understand the needs of any user of this technical application. Run that next lab meeting paperless!</p>
+  </div>
+
+  <div class="explain-right">
+    <h3>Collaboration</h3>
+    <p class="sell">Our app provides the ability to interact with other users to collaborate on various proposals or experiments. Only users on your team will be able to modify team experiments. Gather your team to create a new lab correspondance today.</p>
+  </div>
+</div>
 
 
-<%= link_to 'Proposals', controller: 'proposals' %>
+
+</main>
+
+<div id="proposalsb" class="button">
+  <form>
+    <%= link_to 'Current Proposals', controller: 'proposals', style: 'color:darkolivegreen' %>
+  </form>
+</div>
