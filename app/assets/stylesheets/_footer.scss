@@ -2,6 +2,73 @@ footer {
    position:absolute;
    bottom:0;
    width:100%;
-   height:60px;
-   background:#6cf;
+   height: 85px;
+   background-color: darkseagreen;
+   overflow: hidden;
+   font-family: sans-serif;
+}
+
+.foots {
+  text-decoration: underline;
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+#contact {
+  margin-top: -19px;
+  margin-left: 10px;
+  display: inline;
+  float: left;
+  margin-right:50px;
+}
+
+#year {
+  margin-left: 10px;
+  display:inline;
+  float: left;
+  margin-right: 50px;
+}
+
+#int {
+  margin-top: 8px;
+}
+
+p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 80%;
+}
+
+a.social {
+  margin-top: 2px;
+  margin-bottom: 0px;
+  text-decoration: none;
+  font-family: sans-serif;
+  color: dimgrey;
+  font-size: 80%
+}
+
+.bottomfoot li {
+    margin-top: -50px;
+    float: right;
+    display: inline;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 17px;
+    text-decoration: none;
+    border: 1px;
+    margin-right: 10px;
+    position: relative;
+
+}
+
+.bottomfoot li:hover {
+    background-color: silver;
+    color: black;
+}
+
+.bottomfoot li.active {
+    background-color: #4CAF50;
+    color: white;
 }
