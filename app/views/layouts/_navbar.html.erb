@@ -3,11 +3,11 @@
     <div class='card'>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
-            <%= link_to 'Home', root_path, class: "nav-link #{yield(:blog_active)}" %>
+            <%= link_to 'Home', root_path, class: "nav-link" %>
           </li>
           <% if user_signed_in? %>
             <li class="list-group-item">
-              <%= link_to 'My Profile', profile_path(user), class: "nav-link #{yield(:user)}" %>
+              <%= link_to 'My Profile', user_path(current_user), class: "nav-link" %>
             </li>
             <li class="list-group-item">
               <%= link_to 'Logout', destroy_user_session_path, class: "nav-link", method: :delete %>
