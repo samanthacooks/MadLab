@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   has_many :proposals, foreign_key: :proposer_id
   has_many :experiments, foreign_key: :experimenter_id
-  has_many :comments, as: :commentable
+  has_many :comments
 end
