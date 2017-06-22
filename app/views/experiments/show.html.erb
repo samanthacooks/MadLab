@@ -1,10 +1,17 @@
 <h1>The Deets on this Experiment!</h1>
 
-<div class="experiment-details">
-  <b>Category</b> @experiment.category<br>
-  <b>RESULTS</b> = > @experiment.results <br>
-  <b>CONCLUSION</b> => @experiment.conclusions <br>
-  <b>OBSERVATION</b> = > @experiment.observations <br>
+<div class="border">
+  <b>Category</b> <%= @experiment.category %><br>
+  <b>RESULTS</b> = > <%= @experiment.results %> <br>
+  <b>CONCLUSION</b> => <%= @experiment.conclusions %> <br>
+
+  <div class="border">
+  <h4>Experiment observations</h4>
+    <b>OBSERVATIONS</b> = > <%= @experiment.observations %><br>
+    <%= link_to "Add Observation", new_experiment_observation_path(@experiment)%>
+
+  </div>
+
 </div>
 
 
@@ -14,17 +21,21 @@
 <h1>Procedures</h1>
 
 
-<div class="experiment-procedure">
-  @experiment.procedures
-  <div class="procedure-observations"><h4>these are the procedure observations</h4>
-  @experiment.procedures.observations
+<div class="border">
+  <% @experiment.procedures.each do |procedure|%>
+    <p><%= procedure.steps %></p>
+  <% end %>
+  <div class="border"><h4>Procedure observations</h4>
+  <%= @experiment.procedures %>
+  <% binding.pry %>
   </div>
-  <%= link_to "Add Observation",new_proposal_observation_path%>
+  <%= link_to "Add Observation"%>
 </div>
 
 <br><br><br><br>
 
 <h1>Experiment comments</h1>
-<div class="experiment-comments">
-  @experiment.comments
+<div class="border">
+  <%= @experiment.comments %>
 </div>
+  <%= link_to "Add comment"%>

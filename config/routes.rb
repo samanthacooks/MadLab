@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :proposals
 
   resources :experiments do
+    resources :procedures
     resources :comments
     resources :observations
   end
