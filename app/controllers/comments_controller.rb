@@ -17,7 +17,6 @@ class CommentsController < ApplicationController
   end
 
   def create
-    binding.pry
     @comment = User.find_by(id:current_user.id).comments.new(
       body: params["comment"]["body"],
       user_id: current_user.id,
