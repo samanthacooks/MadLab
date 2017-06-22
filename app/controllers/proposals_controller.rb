@@ -21,11 +21,11 @@ class ProposalsController < ApplicationController
 
   def show
     # binding.pry
-    @proposal = Proposal.find(params[:id])
+    @proposal = Proposal.find_by(id: params[:id])
   end
 
   def edit
-    @proposal = Proposal.find(params[:id])
+    @proposal = Proposal.find_by(id: params[:id])
   end
 
   def update
@@ -33,7 +33,7 @@ class ProposalsController < ApplicationController
 
   
   def destroy
-    @proposal = Proposal.find(params[:id])
+    @proposal = Proposal.find_by(id: params[:id])
     @proposal.destroy
    
     redirect_to proposals_path
