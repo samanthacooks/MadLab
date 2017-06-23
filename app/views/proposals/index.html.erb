@@ -10,12 +10,12 @@
     <tr>
       <td id="summary"><%= proposal.summary %></td>
       <td id="hypothesis"><%= proposal.hypothesis %></td>
-      <td class="prolink"><%= link_to 'Show', proposal_path(proposal) %></td>
+      <td class="prolink"><%= link_to 'Show', proposal_path(proposal), style: 'color:saddlebrown' %></td>
       <% if user_signed_in? %>
-        <td id="proedit"><%= link_to 'Edit', edit_proposal_path(proposal) %></td>
+        <td id="proedit"><%= link_to 'Edit', edit_proposal_path(proposal), style: 'color:saddlebrown' %></td>
         <td id="prodelete"><%= link_to 'Delete', proposal_path(proposal),
                 method: :delete,
-                data: { confirm: 'Are you sure?' } %></td>
+                data: { confirm: 'Are you sure?' }, style: 'color:saddlebrown' %></td>
       <% end %>
     </tr>
   <% end %>

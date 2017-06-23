@@ -18,11 +18,14 @@
     <strong>Experiments:</strong>
     <br>
     <% @proposal.experiments.each do |experiment| %>
+      <br>
       <%= "#{experiment.id}    | #{experiment.category}" %>
+      <br>
+      <%= link_to 'Show', experiment_path(experiment), style: 'color:saddlebrown' %>
       <br>
     <% end %>
   </p>
-  <%= link_to 'New Experiment',new_proposal_experiment_path(@proposal) %>
+  <%= link_to 'New Experiment',new_proposal_experiment_path(@proposal), style: 'color:darkolivegreen' %>
   <br>
   <% if user_signed_in? %>
     <%= link_to 'Edit', edit_proposal_path(@proposal), style: 'color:darkolivegreen' %> |

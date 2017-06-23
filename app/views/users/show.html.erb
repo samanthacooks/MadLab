@@ -10,9 +10,14 @@
 
   <% current_user.proposals.each do |proposal| %>
     <tr>
-      <td id="id"><%= proposal.id %></td>
-      <td id="summary"><%= proposal.summary %></td>
-      <td class="prolink"><%= link_to 'Show', proposal_path(proposal) %></td>
+      <td class="id"><%= proposal.id %></td>
+      <td class="summary"><%= proposal.summary %></td>
+      <td class="prolink"><%= link_to 'Show', proposal_path(proposal), style: 'color:saddlebrown',  class: 'newshow' %></td>
+      <td id="proedit"><%= link_to 'Edit', edit_proposal_path(proposal), style: 'color:saddlebrown' %></td>
+      <td id="prodelete"><%= link_to 'Delete', proposal_path(proposal),
+                method: :delete,
+                data: { confirm: 'Are you sure?' }, style: 'color:saddlebrown' %></td>
+
     </tr>
   <% end %>
 </table>
@@ -28,14 +33,18 @@
 
   <% current_user.experiments.each do |experiment| %>
     <tr>
-      <td id="id"><%= experiment.id %></td>
-      <td id="summary"><%= experiment.type %></td>
-      <td class="prolink"><%= link_to 'Show', experiment_path(experiment) %></td>
+      <td class="id"><%= experiment.id %></td>
+      <td class="summary"><%= experiment.type %></td>
+      <td class="prolink"><%= link_to 'Show', experiment_path(experiment), style: 'color:saddlebrown',  class: 'newshow' %></td>
+      <td id="proedit"><%= link_to 'Edit', edit_experiment_path(experiment), style: 'color:saddlebrown' %></td>
+      <td id="prodelete"><%= link_to 'Delete', experiment_path(experiment),
+                method: :delete,
+                data: { confirm: 'Are you sure?' }, style: 'color:saddlebrown' %></td>
     </tr>
   <% end %>
 </table>
 
-
-<%= link_to 'New Proposal',new_proposal_path(@proposal) %>
+<br>
+<%= link_to 'New Proposal',new_proposal_path(@proposal), style: 'color:saddlebrown', class: 'newp' %>
 
 <% end %>
