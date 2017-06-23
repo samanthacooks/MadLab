@@ -17,6 +17,7 @@ class CommentsController < ApplicationController
   end
 
   def create
+    comment_params
     @comment = User.find_by(id:current_user.id).comments.new(
       body: params["comment"]["body"],
       user_id: current_user.id,
@@ -34,7 +35,7 @@ class CommentsController < ApplicationController
     if @comment.update(comment_params)
       redirect_to root_path
     else
-      render 'new'
+      render 'edit'
     end
   end
 
@@ -51,6 +52,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:commentable, :body,:user_id)
+      params.require(:comment).permit(:commentable, :body,:user_id,:type)
     end
 end
