@@ -4,21 +4,21 @@ class ObservationsController < ApplicationController
   end
 
   def new
-    @experiment = Experiment.find_by(id: params[:id])
-    @observation = Observation.new(observation_params)
+    @experiment = Experiment.find_by(id: params[:experiment_id])
+    @observation = Observation.new
   end
 
   def create
     @experiment = Experiment.find_by(id: params[:id])
     @observation = Observation.new(params[:observation])
-    
+
     if @observation.save
     	redirect_to [:experiment, @observation]
-    else 
+    else
     	render 'new'
     end
   end
-  
+
   def show
     @experiment = Experiment.find_by(id: params[:id])
     @observation = Observation.find_by(id:params[:id])
@@ -34,7 +34,7 @@ class ObservationsController < ApplicationController
   def destroy
   	@proposal = Proposal.find_by(id: params[:id])
     @proposal.destroy
-   
+
     redirect_to observations_path
   end
 
