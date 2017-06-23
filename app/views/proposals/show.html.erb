@@ -25,7 +25,7 @@
       <br>
     <% end %>
   </p>
-  <%= link_to 'New Experiment',new_experiment_path(@experiment), style: 'color:darkolivegreen' %>
+  <%= link_to 'New Experiment',new_proposal_experiment_path(@proposal), style: 'color:darkolivegreen' %>
   <br>
   <% if user_signed_in? %>
     <%= link_to 'Edit', edit_proposal_path(@proposal), style: 'color:darkolivegreen' %> |

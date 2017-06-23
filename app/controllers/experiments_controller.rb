@@ -4,14 +4,22 @@ class ExperimentsController < ApplicationController
   end
 
   def new
+    @proposal = Proposal.find_by(id:params[:id])
     @experiment = Experiment.new
-    @experiment.proposal_id = Proposal.find_by(id: params[:id])
-    @experiment.experimenter_id = current_user
-    @proposal = Proposal.find_by(id: @experiment.proposal_id)
-
   end
 
   def create
+    experiment = current_user.experiments.new(
+    category: params["experiment"]["category"],
+    results: params["experiment"]["results"],
+    conclusions: params["experiment"]["conclusions"],
+    proposal_id: params[:proposal_id]
+  )
+     if experiment.save
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
 
   def show
