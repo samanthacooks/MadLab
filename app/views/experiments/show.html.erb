@@ -21,7 +21,9 @@
         <% end %>
       <% end %>
       <% if signed_in? %>
-        <%= link_to "Add Observation", new_experiment_observation_path(@experiment)%>
+      <br>
+      <br>
+        <%= link_to "Add Observation", new_experiment_observation_path(@experiment), style: 'color:saddlebrown'%>
       <% end %>
   </div>
 </div>
@@ -52,7 +54,7 @@
   </div>
   <div>
     <% if signed_in? %>
-      <%= link_to "Add Observation",new_experiment_procedure_path(@experiment)%>
+      <%= link_to "Add Observation",new_experiment_procedure_path(@experiment), style: 'color:saddlebrown'%>
     <% end %>
   </div>
 </div>
@@ -81,7 +83,7 @@
   <% end %>
 
   <% if signed_in? %>
-    <%= link_to "Add comment",new_experiment_comment_path(@experiment)%>
+    <%= link_to "Add comment",new_experiment_comment_path(@experiment), style: 'color:saddlebrown'%>
   <% end %>
 </div>
 
