@@ -25,6 +25,13 @@
     <%= f.text_area :hypothesis %>
   </p>
 
+  <%= f.select(:status) do %>
+    <% [['Open'], ['In Progress'], ['Close'], ['Archived']].each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+    <% end %>
+  <% end %>
+
+
   <p class="submit">
     <%= f.submit %>
   </p>
