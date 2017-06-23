@@ -56,13 +56,15 @@
     <% if @experiment.comments.empty?%>
       <p> There are no comments for this experiment </p>
     <% else %>
-      <p> <%="#{index+1}. "%> <%= comment.body %> </p>
+      <p> <%="#{index+1}. "%> <%= comment.body %>
+        -<b><%= User.find_by(id:comment.user_id).email %></b>
     <% end %>
 
     <% if signed_in? %>
       <% if current_user.id == comment.user_id %>
-        <%= link_to "Edit", edit_experiment_comment_path(experiment_id: @experiment.id, id: comment.id)%>
-        <%= link_to "Delete",experiments_comment_post_destroy_path(@experiment,comment),:method=> :delete %>
+        <%= link_to "Edit", edit_experiment_comment_path(experiment_id: @experiment.id, id: comment.id)%> |
+        <%= link_to "Delete",experiments_comment_post_destroy_path(@experiment,comment),:method=> :delete %>|
+      </p>
       <% end %>
     <% end %>
   <% end %>
