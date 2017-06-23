@@ -9,6 +9,21 @@
     <%= @proposal.hypothesis %>
   </p>
   <br>
+  <p>
+    <strong>Status:</strong>
+    <%= @proposal.status %>
+  </p>
+  <br>
+  <p>
+    <strong>Experiments:</strong>
+    <br>
+    <% @proposal.experiments.each do |experiment| %>
+      <%= "#{experiment.id}    | #{experiment.category}" %>
+      <br>
+    <% end %>
+  </p>
+  <%= link_to 'New Experiment',new_experiment_path(@experiment) %>
+  <br>
   <% if user_signed_in? %>
     <%= link_to 'Edit', edit_proposal_path(@proposal), style: 'color:darkolivegreen' %> |
   <% end %>

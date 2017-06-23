@@ -1,12 +1,41 @@
 <% if user_signed_in? %>
   <h1>Welcome <%= current_user.first_name %>! </h1>
 
+<h3>Proposals</h3>
+<table class="one">
+  <tr>
+    <th class="protitle">ID</th>
+    <th class="protitle">Summary</th>
+  </tr>
+
+  <% current_user.proposals.each do |proposal| %>
+    <tr>
+      <td id="id"><%= proposal.id %></td>
+      <td id="summary"><%= proposal.summary %></td>
+      <td class="prolink"><%= link_to 'Show', proposal_path(proposal) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+
+<h3>Experiments</h3>
+<table class="two">
+  <tr>
+    <th class="protitle">ID</th>
+    <th class="protitle">Summary</th>
+  </tr>
+
+  <% current_user.experiments.each do |experiment| %>
+    <tr>
+      <td id="id"><%= experiment.id %></td>
+      <td id="summary"><%= experiment.type %></td>
+      <td class="prolink"><%= link_to 'Show', experiment_path(experiment) %></td>
+    </tr>
+  <% end %>
+</table>
 
 
-
-
-
-
-
+<%= link_to 'New Proposal',new_proposal_path(@proposal) %>
 
 <% end %>
