@@ -31,6 +31,12 @@ class ObservationsController < ApplicationController
   end
 
 	def update
+    observation = Observation.find_by(id:params[:id])
+     if observation.update(observation_params)
+      redirect_to root_path
+    else
+      render 'edit'
+    end
 	end
 
   def destroy
