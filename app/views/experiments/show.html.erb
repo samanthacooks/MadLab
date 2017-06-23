@@ -8,11 +8,15 @@
   <div class="border center">
     <h1 class="color">Experiment observations</h1>
       <% @experiment.observations.each_with_index do |observation,index|%>
-          <p><%="#{index+1}. "%><%= observation.body %></p><br>
+          <p><%="#{index+1}. "%><%= observation.body %>
         <% if signed_in? %>
           <% if current_user.id == observation.observable_id %>
-            <%= link_to "Edit"%>
-            <%= link_to "Delete" %>
+          -<b><%= User.find_by(id:observation.observable_id).email %></b>
+            <%= link_to "Edit"%>|
+            <%= link_to "Delete",destroy_exp_observation_destroy_path(@experiment,observation),:method=> :delete %>|
+            <%= link_to "Comment" %>|
+            <span class="timestamp">Submitted <%= time_ago_in_words(observation.created_at) %> Ago</span>
+          </p>
           <% end %>
         <% end %>
       <% end %>
@@ -32,13 +36,17 @@
     <h4>Procedure observations</h4>
   <% @experiment.procedures.each_with_index do |procedure,index|%>
     <% procedure.observations.each do |observation| %></p>
-      <p><%="#{index+1}. "%><%= observation.body %></p>
+    <div>
+      <p><%="#{index+1}. "%><%= observation.body %>
       <% if signed_in? %>
         <% if current_user.id == observation.observable_id %>
-          <%= link_to "Edit"%>
-          <%= link_to "Delete" %>
+          <%= link_to "Edit"%>|
+          <%= link_to "Delete" %>|
         <% end %>
       <% end %>
+       <span class="timestamp">Submitted <%= time_ago_in_words(observation.created_at) %> Ago</span>
+      </p>
+    </div>
     <% end %>
   <% end %>
   </div>
@@ -64,9 +72,10 @@
       <% if current_user.id == comment.user_id %>
         <%= link_to "Edit", edit_experiment_comment_path(experiment_id: @experiment.id, id: comment.id)%> |
         <%= link_to "Delete",experiments_comment_post_destroy_path(@experiment,comment),:method=> :delete %>|
-      </p>
       <% end %>
     <% end %>
+        <span class="timestamp">Submitted <%= time_ago_in_words(comment.created_at) %> Ago</span>
+      </p>
   <% end %>
 
   <% if signed_in? %>
