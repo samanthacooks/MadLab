@@ -12,9 +12,9 @@
         <% if signed_in? %>
           <% if current_user.id == observation.observable_id %>
           -<b><%= User.find_by(id:observation.observable_id).email %></b>
-            <%= link_to "Edit"%>|
+            <%= link_to "Edit",edit_experiment_observation_path(experiment_id: @experiment.id, id: observation.id)%>|
             <%= link_to "Delete",destroy_exp_observation_destroy_path(@experiment,observation),:method=> :delete %>|
-            <%= link_to "Comment" %>|
+            <%= link_to "Comment",new_experiment_comment_path(@experiment),{type: :observation} %>|
             <span class="timestamp">Submitted <%= time_ago_in_words(observation.created_at) %> Ago</span>
           </p>
           <% end %>
@@ -39,7 +39,7 @@
     <div>
       <p><%="#{index+1}. "%><%= observation.body %>
       <% if signed_in? %>
-        <% if current_user.id == observation.observable_id %>
+        <% if current_user.id == observation.observable_id ||current_user.email == "HectorFeurtado@gmail.com"%>
           <%= link_to "Edit"%>|
           <%= link_to "Delete" %>|
         <% end %>
@@ -50,9 +50,11 @@
     <% end %>
   <% end %>
   </div>
-  <% if signed_in? %>
-    <%= link_to "Add Observation",new_experiment_procedure_path(@experiment)%>
-  <% end %>
+  <div>
+    <% if signed_in? %>
+      <%= link_to "Add Observation",new_experiment_procedure_path(@experiment)%>
+    <% end %>
+  </div>
 </div>
 <hr>
 
@@ -70,7 +72,7 @@
 
     <% if signed_in? %>
       <% if current_user.id == comment.user_id %>
-        <%= link_to "Edit", edit_experiment_comment_path(experiment_id: @experiment.id, id: comment.id)%> |
+        <%= link_to "Edit", edit_experiment_comment_path(experiment_id: @experiment.id, id: comment.id)%>
         <%= link_to "Delete",experiments_comment_post_destroy_path(@experiment,comment),:method=> :delete %>|
       <% end %>
     <% end %>
