@@ -5,6 +5,10 @@ class ExperimentsController < ApplicationController
 
   def new
     @experiment = Experiment.new
+    @experiment.proposal_id = Proposal.find_by(id: params[:id])
+    @experiment.experimenter_id = current_user
+    @proposal = Proposal.find_by(id: @experiment.proposal_id)
+
   end
 
   def create
