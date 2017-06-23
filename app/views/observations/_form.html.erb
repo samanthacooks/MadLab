@@ -1,4 +1,5 @@
-<%= form_for @observation do |f| %>
+
+<%= form_for ([:experiment, @observation]) do |f| %>
 
   <% if @observation.errors.any? %>
     <div id="error_explanation">

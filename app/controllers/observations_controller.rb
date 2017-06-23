@@ -4,21 +4,23 @@ class ObservationsController < ApplicationController
   end
 
   def new
-    @experiment = Experiment.find_by(id: params[:id])
-    @observation = Observation.new(observation_params)
+    @experiment = Experiment.find_by(id: params[:experiment_id])
+    @observation = Observation.new
   end
 
   def create
-    @experiment = Experiment.find_by(id: params[:id])
-    @observation = Observation.new(params[:observation])
-    
+    experiment = Experiment.find_by(id: params[:experiment_id])
+    @observation = experiment.observations.new(
+      body:params["observation"]["body"],
+      observable: experiment
+      )
     if @observation.save
-    	redirect_to [:experiment, @observation]
-    else 
+    	redirect_to root_path
+    else
     	render 'new'
     end
   end
-  
+
   def show
     @experiment = Experiment.find_by(id: params[:id])
     @observation = Observation.find_by(id:params[:id])
@@ -32,15 +34,17 @@ class ObservationsController < ApplicationController
 	end
 
   def destroy
-  	@proposal = Proposal.find_by(id: params[:id])
-    @proposal.destroy
-   
-    redirect_to observations_path
+    observation = Observation.find_by(id:params[:id]).destroy
+    if observation.nil?
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
   end
 
   private
   def observation_params
-    params.require(:observation).permit(:body)
+    params.require(:observation).permit(:body,:observable)
   end
 end
 
