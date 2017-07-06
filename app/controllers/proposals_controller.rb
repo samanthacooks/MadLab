@@ -1,6 +1,5 @@
 class ProposalsController < ApplicationController
   def index
-    # binding.pry
     @proposals = Proposal.all
   end
 
@@ -9,7 +8,6 @@ class ProposalsController < ApplicationController
   end
 
   def create
-    binding.pry
     @proposal = Proposal.new(proposal_params)
     @proposal.proposer_id = current_user.id
 
@@ -22,7 +20,6 @@ class ProposalsController < ApplicationController
 
 
   def show
-    # binding.pry
     @proposal = Proposal.find_by(id: params[:id])
     @experiment = Experiment.new
   end
