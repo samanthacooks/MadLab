@@ -34,7 +34,7 @@
   <% current_user.experiments.each do |experiment| %>
     <tr>
       <td class="id"><%= experiment.id %></td>
-      <td class="summary"><%= experiment.type %></td>
+      <td class="summary"><%= experiment.category %></td>
       <td class="prolink"><%= link_to 'Show', experiment_path(experiment), style: 'color:saddlebrown',  class: 'newshow' %></td>
       <td id="proedit"><%= link_to 'Edit', edit_experiment_path(experiment), style: 'color:saddlebrown' %></td>
       <td id="prodelete"><%= link_to 'Delete', experiment_path(experiment),

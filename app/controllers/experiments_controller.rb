@@ -16,7 +16,7 @@ class ExperimentsController < ApplicationController
     proposal_id: params[:proposal_id]
   )
      if experiment.save
-      redirect_to root_path
+      redirect_to experiment
     else
       render 'new'
     end
