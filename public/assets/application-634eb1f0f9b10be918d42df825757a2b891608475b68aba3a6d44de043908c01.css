@@ -1,0 +1,446 @@
+/* line 1, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_footer.scss */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 85px;
+  background-color: darkseagreen;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+/* line 11, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_footer.scss */
+.foots {
+  text-decoration: underline;
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+/* line 17, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_footer.scss */
+#contact {
+  margin-top: -19px;
+  margin-left: 10px;
+  display: inline;
+  float: left;
+  margin-right: 50px;
+}
+
+/* line 25, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_footer.scss */
+#year {
+  margin-left: 10px;
+  display: inline;
+  float: left;
+  margin-right: 50px;
+}
+
+/* line 32, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_footer.scss */
+#int {
+  margin-top: 8px;
+}
+
+/* line 36, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_footer.scss */
+.address {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 80%;
+}
+
+/* line 42, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_footer.scss */
+a.social {
+  margin-top: 2px;
+  margin-bottom: 0px;
+  text-decoration: none;
+  font-family: sans-serif;
+  color: dimgrey;
+  font-size: 80%;
+}
+
+/* line 51, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_footer.scss */
+.bottomfoot li {
+  margin-top: -50px;
+  float: right;
+  display: inline;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
+  text-decoration: none;
+  border: 1px;
+  margin-right: 10px;
+  position: relative;
+}
+
+/* line 66, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_footer.scss */
+.bottomfoot li:hover {
+  background-color: silver;
+  color: black;
+}
+
+/* line 71, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_footer.scss */
+.bottomfoot li.active {
+  background-color: #4CAF50;
+  color: white;
+}
+/* line 1, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_form.scss */
+* {
+  font-family: sans-serif;
+}
+
+/* line 5, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_form.scss */
+.login-title {
+  margin-left: -1400px;
+}
+
+/* line 9, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_form.scss */
+form {
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+/* line 14, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_form.scss */
+input {
+  text-align: center;
+  width: 25%;
+  margin-bottom: 15px;
+  height: 30px;
+  font-size: 16px;
+}
+
+/* line 22, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_form.scss */
+.submit {
+  margin-left: 25px;
+}
+
+/* line 26, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_form.scss */
+.actions {
+  margin-top: 10px;
+  padding: 10px;
+  margin-left: -10px;
+}
+
+/* line 32, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_form.scss */
+.field {
+  margin-left: 10px;
+}
+/* line 1, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_navbar.scss */
+.collapse-bg {
+  background-color: darkseagreen;
+  overflow: hidden;
+}
+
+/* line 6, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_navbar.scss */
+a {
+  text-decoration: none;
+  font-family: sans-serif;
+  color: dimgrey;
+  font-size: 120%;
+}
+
+/* line 13, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_navbar.scss */
+.navbar {
+  position: fixed;
+  display: inline;
+}
+
+/* line 18, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_navbar.scss */
+.logo {
+  margin-left: 10px;
+  height: 75px;
+  display: inline;
+  float: left;
+}
+
+/* line 25, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_navbar.scss */
+.topnav li {
+  float: right;
+  display: inline;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
+  text-decoration: none;
+  border: 1px;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  position: relative;
+}
+
+/* line 40, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_navbar.scss */
+.topnav li:hover {
+  background-color: silver;
+  color: black;
+}
+
+/* line 45, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/_navbar.scss */
+.topnav li.active {
+  background-color: #4CAF50;
+  color: white;
+}
+/* line 5, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/experiments.scss */
+.color {
+  letter-spacing: .08em;
+  color: #fff;
+}
+
+/* line 9, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/experiments.scss */
+.position {
+  position: relative;
+  bottom: 100px;
+  width: 50%;
+}
+
+/* line 15, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/experiments.scss */
+.absolute {
+  position: absolute;
+}
+
+/* line 19, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/experiments.scss */
+.center {
+  left: 400px;
+  text-align: center;
+}
+/* line 5, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/proposals.scss */
+* {
+  font-family: sans-serif;
+}
+
+/* line 9, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/proposals.scss */
+table {
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 20px;
+}
+
+/* line 15, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/proposals.scss */
+.protitle {
+  padding-bottom: 8px;
+}
+
+/* line 19, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/proposals.scss */
+#summary {
+  width: 20%;
+  padding-right: 10px;
+}
+
+/* line 24, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/proposals.scss */
+#hypothesis {
+  width: 60%;
+  padding-right: 30px;
+}
+
+/* line 29, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/proposals.scss */
+.prolink {
+  padding-right: 15px;
+  padding-left: 2px;
+  float: center;
+  text-align: right;
+}
+
+/* line 36, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/proposals.scss */
+#proedit {
+  padding-left: 5px;
+  padding-right: 2px;
+}
+
+/* line 41, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/proposals.scss */
+.showproposal {
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 20px;
+}
+
+/* line 47, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/proposals.scss */
+p {
+  font-size: 100%;
+}
+
+/* line 51, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/proposals.scss */
+form {
+  margin-left: 20px;
+}
+
+/* line 55, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/proposals.scss */
+textarea {
+  width: 300px;
+  height: 150px;
+  font-size: 13px;
+}
+
+/* line 61, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/proposals.scss */
+select {
+  width: 150px;
+  height: 30px;
+  font-size: 12px;
+}
+
+/* line 67, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/proposals.scss */
+.psubmit {
+  margin-left: -5px;
+}
+/* line 6, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/users.scss */
+.protitle {
+  margin-left: 25px;
+  padding-left: 20px;
+}
+
+/* line 11, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/users.scss */
+.id {
+  padding-left: 20px;
+}
+
+/* line 15, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/users.scss */
+.summary {
+  padding-left: 20px;
+}
+
+/* line 19, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/users.scss */
+.newp {
+  margin-left: 20px;
+}
+
+/* line 23, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/users.scss */
+.newshow {
+  margin-left: 80px;
+}
+/* line 1, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/welcome.scss */
+body {
+  background-image: url("microscope.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 9, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/welcome.scss */
+h1 {
+  font-family: sans-serif;
+  color: black;
+  text-align: center;
+  margin-top: 75px;
+  font-size: 250%;
+}
+
+/* line 17, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/welcome.scss */
+h2 {
+  margin-top: 50px;
+  text-align: center;
+}
+
+/* line 22, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/welcome.scss */
+#help {
+  text-align: left;
+  margin-left: 100px;
+}
+
+/* line 27, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/welcome.scss */
+.button {
+  width: 12%;
+  border: solid 1px;
+  border-radius: 20px;
+  background-color: antiquewhite;
+  height: 30px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 5px;
+  padding-right: 8px;
+}
+
+/* line 38, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/welcome.scss */
+.button-form {
+  width: 80% 3;
+}
+
+/* line 42, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/welcome.scss */
+button {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  font-family: sans-serif;
+}
+
+/* line 49, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/welcome.scss */
+#proposalsb {
+  margin-top: 450px;
+}
+
+/* line 53, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/welcome.scss */
+.sell-blocks {
+  margin-top: 200px;
+  margin-right: 200px;
+}
+
+/* line 58, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/welcome.scss */
+.explain-left, .explain-right {
+  width: 20%;
+  border: solid 1px;
+  margin-right: 50px;
+  margin-left: 50px;
+  padding-right: 20px;
+  padding-left: 20px;
+  font-family: sans-serif;
+  font-size: 90%;
+  padding-bottom: 35px;
+}
+
+/* line 70, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/welcome.scss */
+.explain-left {
+  float: right;
+  clear: none;
+}
+
+/* line 75, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/welcome.scss */
+.sell {
+  font-size: 100%;
+}
+
+/* line 79, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/welcome.scss */
+.explain-right {
+  float: right;
+  clear: none;
+}
+
+/* line 84, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/welcome.scss */
+#about-title {
+  text-align: left;
+  text-decoration: underline;
+  margin-left: 100px;
+}
+
+/* line 90, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/welcome.scss */
+.about {
+  font-size: 20px;
+  width: 70%;
+  margin-left: 100px;
+  margin-right: 120px;
+}
+
+/* line 97, /Users/macbookair/Desktop/MadLab/app/assets/stylesheets/welcome.scss */
+#signbutton {
+  color: darkolivegreen;
+}
+/*
+  This is a manifest file that'll be compiled into application.css, which will include all the files
+  listed below.
+
+  Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+  vendor/assets/stylesheets directory can be referenced here using a relative path.
+
+  You're free to add application-wide styles to this file and they'll appear at the bottom of the
+  compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+  files in this directory. Styles in this file should be added after the last require_* statement.
+  It is generally better to create a new file per style scope.
+
+
+
+ */
+
+
+@import "bootstrap";
+@import "_navbar";
+@import "comments";
+@import "experiments";
+@import "observations";
+@import "procedures";
+@import "proposals";
+@import "welcome";
+@import "users";
