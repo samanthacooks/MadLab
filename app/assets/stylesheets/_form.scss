@@ -4,6 +4,7 @@
 
 .login-title {
   margin-left: -1400px;
+  margin-bottom: 35px;
 }
 
 form {
@@ -20,15 +21,20 @@ input {
 }
 
 .submit {
-  margin-left: 25px;
+  margin-left: 20px;
+  padding: 10px;
+
 }
 
 .actions {
   margin-top: 10px;
-  padding: 10px;
-  margin-left: -10px;
+  margin-left: -20px;
 }
 
 .field {
   margin-left: 10px;
+}
+
+.remember {
+  /*margin-left: -10px;*/
 }
