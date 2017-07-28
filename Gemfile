@@ -58,6 +58,5 @@ gem 'devise'
 
 gem 'bootstrap-sass'
 
-gem 'sprockets_better_errors'
 
 
