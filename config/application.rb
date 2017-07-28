@@ -1,6 +1,6 @@
 require_relative 'boot'
 
-require 'pry'
+# require 'pry'
 require "rails"
 # Pick the frameworks you want:
 require "active_model/railtie"
